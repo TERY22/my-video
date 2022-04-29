@@ -1,0 +1,42 @@
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class VideosService {
+  public paginationPage: number = 12;
+  public currentPage: number = 1;
+  public searchQuery: string = 'All';
+
+  constructor(private http: HttpClient) {}
+
+  private headers = {'Authorization': '563492ad6f917000010000016f07e56fdcad4a4f92efb8a2e909f1f3'};
+
+  private get(url: string, params: any = {}): any {
+    return this.http.get(url, {headers: this.headers, params: params});
+  }
+
+  public getVideos(): any {
+    return this.get('https://api.pexels.com/videos/search',
+    {
+      'query': this.searchQuery,
+      'per_page': this.paginationPage,
+      'page': this.currentPage,
+    });
+  }
+
+  public searchVideos(): any {
+    return this.get('https://api.pexels.com/videos/search', {
+      'query': this.searchQuery
+    });
+  }
+
+  public getVideoInfo(id: number): any {
+    return this.get('https://api.pexels.com/videos/videos/' + id);
+  }
+
+  public getPopularVideos(): any {
+    return this.get('https://api.pexels.com/videos/popular', {'per_page': 10});
+  }
+}

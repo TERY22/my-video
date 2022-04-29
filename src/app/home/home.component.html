@@ -1,0 +1,21 @@
+<main class="main" id="main">
+    <section class="home">
+        <div class="home__container container">
+            <h1 class="home__title">Hey! Let's search something fun!</h1>
+
+            <div class="home__content">
+                <div class="home__content-first">
+                    <h2 class="home__content-title">The Most Popular Videos</h2>
+
+                    <div class="home__content-cards">
+                        <app-video-card
+                        *ngFor="let video of topVideos"
+                        [video]="video"
+                        >
+                        </app-video-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
