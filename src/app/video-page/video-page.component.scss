@@ -1,125 +1,291 @@
 // Styles For 'Video Page'
 #form {
-    grid-area: form;
+  grid-area: form;
 }
 
 #btns {
-    grid-area: btns;
+  grid-area: btns;
 }
 
 #comments {
-    grid-area: comments;
+  grid-area: comments;
 }
 
 .video {
-    &__container {
-        margin-top: 40px;
+  text-transform: lowercase;
+  &__container {
+    margin-top: 40px;
+  }
+
+  &__content {
+    margin-top: 80px;
+    width: 100%;
+    height: 400px;
+
+    &-title {
+      font-size: 36px;
+      margin-left: 30px;
+      margin-top: 15px;
+      text-transform: lowercase;
+
+      span {
+        display: inline-block;
+        color: #FFF;
+        margin-right: 10px;
+      }
+
+      a {
+        transition: .3s ease-in-out;
+        color: #d94f5c;
+        display: flex;
+        align-items: center;
+      }
     }
 
+    &-video {
+      display: block;
+      margin: 0 auto;
+      border-radius: 15px;
+    }
+  }
+
+  &__submit {
+    margin-top: 250px;
+    margin-bottom: 100px;
+    padding: 20px 30px;
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "form comments"
+    "btns comments";
+    column-gap: 40px;
+
+    &-form {
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &-subtitle,
+      &-name {
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      &-input {
+        min-width: 260px;
+        max-width: 260px;
+        min-height: 230px;
+        max-height: 280px;
+        padding: 10px 10px;
+        text-transform: inherit;
+        border-radius: 15px;
+        border: 1px solid #cecece;
+        outline: none;
+        background-color: transparent;
+        color: #FFFFFF;
+      }
+
+      &-user {
+        width: 260px;
+        max-width: 260px;
+        height: 40px;
+        max-height: 80px;
+        padding: 10px 10px;
+        text-transform: inherit;
+        background-color: transparent;
+        border-radius: 15px;
+        border: 1px solid #cecece;
+        outline: none;
+        color: #FFFFFF;
+      }
+
+      &-container {
+        display: flex;
+        column-gap: 10px;
+        margin-top: 15px;
+      }
+
+      &-btn {
+        width: 60px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: white;
+        padding: 5px 10px;
+        border: 1px solid #cecece;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .3s ease-in-out all;
+        &:hover {
+          background-color: #d94f5c;
+        }
+      }
+    }
+
+    &-comments {
+      padding: 0 20px;
+
+      &-title {
+        font-size: 28px;
+        font-weight: 500;
+      }
+
+      &-list {
+        overflow-y: scroll;
+        height: 350px
+      }
+
+      &-warning {
+        margin-top: 200px;
+        h2 {
+          color: #d94f5c;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+
+}
+
+@media only screen and (max-width: 801px) {
+  .video {
     &__content {
-        margin-top: 80px;
-        width: 100%;
+      &-video {
+        width: 710px;
         height: 400px;
+      }
+    }
+    &__submit {
+      margin-top: 80px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .video {
+    width: 600px;
+    &__submit {
+      margin: 20px 0 0;
+      padding: 0 20px;
+      display: block;
+      &-form {
+        form {
+          flex-wrap: wrap;
+          align-items: baseline;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+        &-subtitle {
+          font-size: 14px;
+        }
+        &-input {
+          font-size: 16px;
+          min-width: 515px;
+        }
+        &-name {
+          font-size: 14px;
+        }
+        &-user {
+          font-size: 14px;
+        }
+      }
+      &-comments {
+        margin-top: 20px;
 
         &-title {
-            font-size: 36px;
-            margin-left: 114px;
-            margin-bottom: 10px;
-
-            span {
-                display: inline-block;
-                color: #FFF;
-            }
-            
-            a {
-                color: var(--accent-color);
-                transition: .3s ease-in-out;
-
-                &:hover {
-                    color: var(--accent-color-alt);
-                }
-            }
+          font-size: 20px;
         }
 
-        &-video {
-            display: block;
-            margin: 0 auto;
+        &-warning {
+          margin-top: 20px;
         }
+      }
     }
+    &__content {
+      height: auto;
+      margin-top: 50px;
+      &-video {
+        width: 525px;
+        height: 295px;
+      }
+      &-title {
+        font-size: 20px;
+        margin-left: 17px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
 
+
+@media only screen and (max-width: 480px) {
+  .video {
+    width: 480px;
     &__submit {
-        margin-top: 450px;
-        margin-bottom: 100px;
-        padding: 20px 30px;
-        width: 100%;
-        min-height: 400px;
-        border: 1px solid #FFF;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas:
-        "form comments"
-        "btns comments";
-        column-gap: 40px;
-
-        &-form {
-            
-            form {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            &-subtitle,
-            &-name {
-                font-size: 16px;
-                font-weight: 300;
-            }
-
-            &-input {
-                width: 250px;
-                max-width: 300px;
-                height: 80px;
-                max-height: 150px;
-                padding: 10px 10px;
-            }
-
-            &-user {
-                width: 200px;
-                max-width: 250px;
-                height: 40px;
-                max-height: 80px;
-                padding: 10px 10px;
-            }
+      &-form {
+        &-input {
+          font-size: 14px;
+          min-width: 390px;
         }
-
-        &-btns {
-            margin-top: 15px;
-            display: flex;
-            column-gap: 10px;
-
-            &-btn {
-                width: 60px;
-                height: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        &-comments {
-            padding: 10px 20px;
-
-            &-title {
-                margin-top: 14px;
-                font-size: 28px;
-                font-weight: 500;
-            }
-
-            &-list {
-                overflow-y: scroll;
-                height: 350px
-            }
-        }
+      }
     }
+    &__content {
+      &-video {
+        width: 440px;
+        height: 250px
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 320px) {
+  .video {
+    width: 320px;
+    &__submit {
+      &-form {
+        margin-left: 10px;
+        &-subtitle {
+          font-size: 12px;
+        }
+        &-input {
+          font-size: 12px;
+        }
+        &-name {
+          font-size: 12px;
+        }
+        &-user {
+          font-size: 12px;
+        }
+      }
+      &-comments {
+        margin-top: 20px;
+
+        &-title {
+          font-size: 20px;
+        }
+
+        &-warning {
+          margin-top: 20px;
+        }
+      }
+    }
+    &__content {
+      height: auto;
+      margin-top: 50px;
+      &-video {
+        width: 280px;
+        height: 160px;
+      }
+    }
+  }
 }

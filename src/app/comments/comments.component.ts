@@ -7,9 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
   @Input() public userName: string = '';
-
-  @Input() public imageSrc: string = '';
-
+  @Input() public imgSrc: string = '';
   @Input() public commentText: string = '';
 
   public userStatus = 'Guest';

@@ -12,6 +12,8 @@ import {VideoPageComponent} from './video-page/video-page.component';
 import {HomeComponent} from './home/home.component';
 import {CommentsComponent} from './comments/comments.component';
 import {VideosComponent} from './videos/videos.component';
+import {AboutComponent} from './about/about.component';
+import {ContactsComponent} from './contacts/contacts.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {VideosComponent} from './videos/videos.component';
     VideoPageComponent,
     HomeComponent,
     CommentsComponent,
-    VideosComponent
+    VideosComponent,
+    AboutComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,58 +1,70 @@
 <section class="video">
-    <div class="video__container container">
-        <div class="video__content">
-            <h3 class="video__content-title">
-                <a href="{{video.user.url}}" target="_blank">
-                    <span>Author:</span>
-                    {{video.user.name}}
-                </a>
-            </h3>
+  <div class="video__container container">
+    <div class="video__content">
+      <video
+      autoplay
+      controls
+      class="video__content-video"
+      src="{{video.video_files[0].link}}"
+      width="920"
+      height="520"
+      >
+      </video>
 
-            <video
-            autoplay
-            controls
-            class="video__content-video"
-            src="{{video.video_files[0].link}}"
-            width="1280"
-            height="720"
-            >
-            </video>
-        </div>
-
-        <div class="video__submit">
-            <div class="video__submit-form" id="form">
-                <form [formGroup]="form" (ngSubmit)="sendForm()">
-                    <span class="video__submit-form-subtitle">Leave a comment</span>
-                    <label>
-                        <textarea required name="text" class="video__submit-form-input" type="text" formControlName="text"></textarea>
-                    </label>
-
-                    <span class="video__submit-form-name">Your Name</span>
-                    <label>
-                        <input required class="video__submit-form-user" type="text" formControlName="name"/>
-                    </label>
-
-                    <div class="video__submit-form-btns" id="btns">
-                        <button class="video__submit-form-btns-btn btn-save">Save</button>
-                    </div>
-                </form>
-            </div>
-
-            <div class="video__submit-comments" id="comments">
-                <h4 class="video__submit-comments-title">Comments:</h4>
-
-                <ul class="video__submit-comments-list">
-                    <ng-container *ngFor="let comment of comments | async">
-                        <app-comments
-                        *ngIf="comment.videoID === video.id"
-                        [userName]="comment.name"
-                        [commentText]="comment.text"
-                        [imageSrc]="comment.src"
-                        >
-                        </app-comments>
-                    </ng-container>
-                </ul>
-            </div>
-        </div>
+      <h3 class="video__content-title">
+        <a href="{{video.user.url}}" target="_blank">
+          <span>Author:</span>
+           {{video.user.name}}
+          <i class="ri-link-m"></i>
+        </a>
+      </h3>
     </div>
+
+  <div class="video__submit">
+    <div class="video__submit-form" id="form">
+      <form [formGroup]="form" (ngSubmit)="sendForm()">
+        <span class="video__submit-form-subtitle">Leave a comment</span>
+        <label>
+          <textarea
+            required
+            name="text"
+            class="video__submit-form-input"
+            type="text"
+            formControlName="commentText">
+          </textarea>
+        </label>
+
+        <span class="video__submit-form-name">Your Name</span>
+        <label>
+          <input required class="video__submit-form-user" type="text" formControlName="userName"/>
+        </label>
+
+        <div class="video__submit-form-container" id="btns">
+          <button class="video__submit-form-btn">Save</button>
+        </div>
+      </form>
+    </div>
+
+      <div class="video__submit-comments" id="comments">
+        <h4 class="video__submit-comments-title">Comments:</h4>
+
+        <ul class="video__submit-comments-list">
+          <ng-container *ngFor="let comment of comments | async">
+            <app-comments
+            *ngIf="comment.videoID === video.id"
+            [userName]="comment.userName"
+            [commentText]="comment.commentText"
+            [imgSrc]="comment.imgSrc"
+            >
+            </app-comments>
+          </ng-container>
+       </ul>
+      </div>
+
+    <div class="video__submit-comments-warning">
+      <h2>Please...</h2>
+      <p>do not write offensive comments, humiliating honor and dignity. Let's live together © Cat Leapold</p>
+    </div>
+    </div>
+  </div>
 </section>

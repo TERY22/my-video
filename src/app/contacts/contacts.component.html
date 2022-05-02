@@ -1,0 +1,16 @@
+<section class="contacts">
+  <div class="contacts__container">
+    <h2 class="contacts__title">
+      Hey! You can find us on the links below :)
+    </h2>
+    <div class="contacts__links">
+      <ul class="contacts__list">
+        <li class="contacts__list-item" *ngFor="let link of links" [title]="link.name">
+          <a [href]="link.url" target="_blank">
+            <i [class]="link.icon"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

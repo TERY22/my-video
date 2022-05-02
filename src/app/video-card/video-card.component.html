@@ -1,20 +1,8 @@
 <article class="home__content-card">
+  <a class="homa__content-container" routerLink="/video/{{video.id}}">
     <div class="home__content-card-video">
-        <img src="{{video.video_pictures[0].picture}}" alt="Video Image"/>
+      <img src="{{video.video_pictures[0].picture}}" alt="Video Image"/>
+      <h3 class="home__content-card-author">{{video.user.name}}</h3>
     </div>
-
-    <h3 class="home__content-card-author">{{video.user.name}}</h3>
-
-    <hr/>
-
-    <div class="home__content-card-info">
-        <span class="home__content-card-info-description">That video was provided by Pexels</span>
-
-        <button
-        class="home__content-card-info-btn"
-        routerLink="/video/{{video.id}}"
-        >
-        Show
-        </button>
-    </div>
+  </a>
 </article>

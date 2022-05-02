@@ -1,4 +1,4 @@
-export interface CommentInterface {
+export interface Comment {
     imgSrc: string,
     userName: string,
     userStatus: string,
