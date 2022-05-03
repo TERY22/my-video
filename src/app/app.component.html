@@ -1,37 +1,64 @@
 <div class="wrapper">
-    <header class="header" id="header">
-        <nav class="nav">
-            <div class="nav__container">
-                <ul class="nav__list">
-                    <li class="nav__list-item">
-                        <a class="nav__list-link" routerLink="/">
-                            <i class="ri-movie-2-line nav__icon"></i>
-                        </a>
-                    </li>
+  <header class="header" id="header">
+    <nav class="nav">
+      <div class="nav__container">
+        <div class="nav__burger-menu" (click)="toggleMenu()">
+          <i class="ri-menu-5-line" *ngIf="!condition"></i>
+          <i class="ri-menu-4-line" *ngIf="condition"></i>
+        </div>
+        <ul class="nav__list">
+          <li class="nav__list-item" (click)="closeMenu()">
+            <a class="nav__list-link" routerLink="/">
+              <i class="ri-movie-2-line nav__icon"></i>
+              My Video
+            </a>
+          </li>
 
-                    <li class="nav__list-item">
-                        <a class="nav__list-link" routerLink="/videos">
-                            All Videos
-                        </a>
-                    </li>
+          <li class="nav__list-item" (click)="closeMenu()">
+            <a class="nav__list-link"  routerLink="/main">
+            <i class="ri-home-heart-line"></i>
+            Main
+          </a>
+          </li>
 
-                    <li class="nav__list-item">
-                        <div class="nav__list-input">
-                            <span class="nav__list-input-icon"><i class='bx bx-search-alt nav__icon'></i></span>
-                            <input
-                            type="search"
-                            id="search"
-                            placeholder="Write: Space or something else"
-                            [(ngModel)]="searchVideos"
-                            (keyup)="search()"
-                            class="nav__list-input"
-                            />
-                        </div>
-                    </li>
-                </ul>
+          <li class="nav__list-item" (click)="closeMenu()">
+            <a class="nav__list-link" routerLink="/videos">
+              <i class="ri-vidicon-line"></i>
+              All Videos
+            </a>
+          </li>
+
+          <li class="nav__list-item" (click)="closeMenu()">
+            <a class="nav__list-link" routerLink="/about">
+              <i class="ri-bill-line"></i>
+              About
+            </a>
+          </li>
+
+          <li class="nav__list-item" (click)="closeMenu()">
+            <a class="nav__list-link" routerLink="/contacts">
+              <i class="ri-links-fill"></i>
+              Contacts
+            </a>
+          </li>
+
+          <li class="nav__list-item" (keydown.enter)="closeMenu()">
+            <div class="nav__list-input">
+              <span class="nav__list-input-icon"><i class='bx bx-search-alt nav__icon'></i></span>
+              <input
+              type="search"
+              id="search"
+              placeholder="Space"
+              [(ngModel)]="searchVideos"
+              (keyup)="search()"
+              class="nav__list-input"
+              />
             </div>
-        </nav>
-    </header>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 </div>
 
 <router-outlet></router-outlet>

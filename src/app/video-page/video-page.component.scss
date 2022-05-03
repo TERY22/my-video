@@ -1,125 +1,366 @@
 // Styles For 'Video Page'
 #form {
-    grid-area: form;
+  grid-area: form;
 }
 
 #btns {
-    grid-area: btns;
+  grid-area: btns;
 }
 
 #comments {
-    grid-area: comments;
+  grid-area: comments;
 }
 
 .video {
-    &__container {
-        margin-top: 40px;
+  text-transform: lowercase;
+  &__container {
+    margin-top: 40px;
+  }
+
+  &__content {
+    margin-top: 80px;
+    width: 100%;
+    height: 400px;
+
+    &-title {
+      font-size: 36px;
+      margin-left: 30px;
+      margin-top: 15px;
+      text-transform: lowercase;
+
+      span {
+        display: inline-block;
+        color: #FFF;
+        margin-right: 10px;
+      }
+
+      a {
+        transition: .3s ease-in-out;
+        color: #d94f5c;
+        display: flex;
+        align-items: center;
+      }
     }
 
-    &__content {
-        margin-top: 80px;
-        width: 100%;
-        height: 400px;
+    &-video {
+      display: block;
+      margin: 0 auto;
+      border-radius: 15px;
+    }
+  }
 
-        &-title {
-            font-size: 36px;
-            margin-left: 114px;
-            margin-bottom: 10px;
+  &__submit {
+    margin-top: 250px;
+    margin-bottom: 100px;
+    padding: 20px 30px;
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "form comments"
+    "btns comments";
+    column-gap: 40px;
 
-            span {
-                display: inline-block;
-                color: #FFF;
-            }
-            
-            a {
-                color: var(--accent-color);
-                transition: .3s ease-in-out;
+    &-form {
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
 
-                &:hover {
-                    color: var(--accent-color-alt);
-                }
-            }
+      &-subtitle,
+      &-name {
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      &-input {
+        min-width: 260px;
+        max-width: 260px;
+        min-height: 230px;
+        max-height: 280px;
+        padding: 10px 10px;
+        text-transform: inherit;
+        border-radius: 15px;
+        border: 1px solid #cecece;
+        outline: none;
+        background-color: transparent;
+        color: #FFFFFF;
+      }
+
+      &-user {
+        width: 260px;
+        max-width: 260px;
+        height: 40px;
+        max-height: 80px;
+        padding: 10px 10px;
+        text-transform: inherit;
+        background-color: transparent;
+        border-radius: 15px;
+        border: 1px solid #cecece;
+        outline: none;
+        color: #FFFFFF;
+      }
+
+      &-container {
+        display: flex;
+        column-gap: 10px;
+        margin-top: 15px;
+      }
+
+      &-btn {
+        width: 60px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        color: white;
+        padding: 5px 10px;
+        border: 1px solid #cecece;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: .3s ease-in-out all;
+        text-transform: lowercase;
+        &:hover {
+          background-color: #d94f5c;
         }
-
-        &-video {
-            display: block;
-            margin: 0 auto;
-        }
+      }
     }
 
-    &__submit {
-        margin-top: 450px;
-        margin-bottom: 100px;
-        padding: 20px 30px;
-        width: 100%;
-        min-height: 400px;
-        border: 1px solid #FFF;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas:
-        "form comments"
-        "btns comments";
-        column-gap: 40px;
+    &-comments {
+      padding: 0 20px;
 
-        &-form {
-            
-            form {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
+      &-title {
+        font-size: 28px;
+        font-weight: 500;
+      }
 
-            &-subtitle,
-            &-name {
-                font-size: 16px;
-                font-weight: 300;
-            }
+      &-list {
+        overflow-y: scroll;
+        height: 350px
+      }
 
-            &-input {
-                width: 250px;
-                max-width: 300px;
-                height: 80px;
-                max-height: 150px;
-                padding: 10px 10px;
-            }
-
-            &-user {
-                width: 200px;
-                max-width: 250px;
-                height: 40px;
-                max-height: 80px;
-                padding: 10px 10px;
-            }
+      &-warning {
+        margin-top: 200px;
+        h2 {
+          color: #d94f5c;
         }
-
-        &-btns {
-            margin-top: 15px;
-            display: flex;
-            column-gap: 10px;
-
-            &-btn {
-                width: 60px;
-                height: 30px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-        }
-
-        &-comments {
-            padding: 10px 20px;
-
-            &-title {
-                margin-top: 14px;
-                font-size: 28px;
-                font-weight: 500;
-            }
-
-            &-list {
-                overflow-y: scroll;
-                height: 350px
-            }
-        }
+      }
     }
+  }
 }
+
+@media screen and (min-width: 360px) {
+  .video {
+    &__submit {
+      margin-top: 200px;
+      margin-bottom: 0;
+      display: block;
+      padding: 20px 0;
+
+      &-form {
+        margin-bottom: 30px;
+        &-subtitle {
+          font-size: 12px;
+          margin-left: 10px;
+        }
+        &-input {
+          min-width: 300px;
+          min-height: 0;
+        }
+        &-name {
+          font-size: 12px;
+          margin-left: 10px;
+        }
+        &-user {
+          width: 150px;
+        }
+        &-btn {
+          width: 75px;
+        }
+      }
+
+      &-comments {
+        padding: 0;
+        &-title {
+          font-size: 22px;
+          margin-left: 10px;
+        }
+      }
+    }
+    &__content {
+      height: 0;
+      &-video {
+        width: 300px;
+        height: 170px;
+      }
+      &-title {
+        font-size: 18px;
+        margin-left: 16px;
+        margin-top: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .video {
+    &__submit {
+      margin-top: 250px;
+      padding: 30px;
+      &-form {
+        &-input {
+          min-width: 400px;
+        }
+        &-user {
+          min-width: 200px;
+        }
+      }
+    }
+    &__content {
+      &-video {
+        width: 400px;
+        height: 225px;
+      }
+      &-title {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .video {
+    &__submit {
+      margin-top: 320px;
+      &-form {
+        &-subtitle {
+          font-size: 16px;
+        }
+        &-input {
+          min-width: 515px;
+        }
+        &-name {
+          font-size: 16px;
+        }
+      }
+    }
+    &__content {
+      &-video {
+        width: 515px;
+        height: 290px;
+      }
+      &-title {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .video {
+    &__submit {
+      margin-top: 450px;
+      padding: 40px;
+      &-form {
+        &-input {
+          width: 700px;
+        }
+      }
+
+      &-comments {
+        &-title {
+          font-size: 24px;
+        }
+      }
+    }
+    &__content {
+      &-video {
+        width: 700px;
+        height: 395px;
+      }
+      &-title {
+        font-size: 32px;
+        margin-left: 60px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .video {
+    &__submit {
+      margin-top: 485px;
+      padding: 40px 115px;
+      &-form {
+        &-subtitle {
+          font-size: 18px;
+        }
+        &-input {
+          min-height: 230px;
+          min-width: 770px;
+          font-size: 18px;
+        }
+        &-name {
+          font-size: 18px;
+        }
+        &-user {
+          font-size: 18px;
+          min-width: 300px;
+        }
+        &-btn {
+          font-size: 18px;
+        }
+      }
+
+      &-comments {
+        &-warning {
+          font-size: 18px;
+        }
+      }
+    }
+    &__content {
+      &-video {
+        width: 770px;
+        height: 435px;
+      }
+      &-title {
+        margin-left: 115px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .video {
+    &__submit {
+      padding: 40px 125px;
+      margin-top: 600px;
+      &-form {
+        &-input {
+          min-width: 990px;
+        }
+      }
+
+      &-comments {
+        &-warning {
+          font-size: 22px;
+        }
+      }
+    }
+    &__content {
+      &-video {
+        width: 1000px;
+        height: 565px;
+      }
+      &-title {
+        margin-left: 130px;
+      }
+    }
+  }
+}
+
+

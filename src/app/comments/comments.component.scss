@@ -1,53 +1,176 @@
 // Styles For Comments
 .comments {
-    &__container {
-        margin-top: 20px;
-        width: 600px;
-        height: 300px;
-        display: grid;
-        grid-template-columns: .5fr 1fr .5fr;
-        grid-template-rows: .5fr 1.5fr;
-        grid-template-areas:
-        "comImg comInfo comDate"
-        "comText comText comText";
-        column-gap: 40px;
-        row-gap: 0;
-        padding: 20px 40px;
+  &__container {
+    margin-top: 20px;
+    width: 600px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: .5fr 1fr .5fr;
+    grid-template-rows: .5fr 1.5fr;
+    grid-template-areas:
+    "comImg comInfo comDate"
+    "comText comText comText";
+    column-gap: 40px;
+    row-gap: 0;
+    padding: 20px 40px;
+  }
+
+  &__img {
+    grid-area: comImg;
+    width:50px;
+    height: 50px;
+  }
+
+  &__info {
+    grid-area: comInfo;
+    display: flex;
+    flex-direction: column;
+
+    &-name {
+      font-size: 20px;
+      font-weight: 500;
     }
 
-    &__img {
-        grid-area: comImg;
-        width: 100px;
-        height: 100px;
+    &-status {
+      font-size: 10px;
+      font-weight: 300;
     }
+  }
 
-    &__info {
-        grid-area: comInfo;
-        display: flex;
-        flex-direction: column;
+  &__date {
+    grid-area: comDate;
+    font-size: 14px;
+    font-weight: 300;
+  }
 
-        &-name {
-            font-size: 20px;
-            font-weight: 500;
-        }
-
-        &-status {
-            font-size: 10px;
-            font-weight: 300;
-        }
-    }
-
-    &__date {
-        grid-area: comDate;
-        font-size: 14px;
-        font-weight: 300;
-    }
-
-    &__content {
-        grid-area: comText;
-        border: 1px solid grey;
-        padding: 10px;
-        font-size: 12px;
-        font-weight: 300;
-    }
+  &__content {
+    grid-area: comText;
+    border: 1px solid #cecece;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: capitalize;
+    border-radius: 15px;
+  }
 }
+
+
+@media screen and (min-width: 360px) {
+  .comments {
+    &__container {
+      width: 290px;
+      padding: 0;
+      height: 150px;
+    }
+    &__date {
+      font-size: 12px;
+    }
+    &__img {
+      width: 25px;
+      height: 25px;
+    }
+    &__info {
+      &-name {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .comments {
+    &__container {
+      width: 390px;
+    }
+    &__date {
+    }
+    &__img {
+
+    }
+    &__info {
+      &-name {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .comments {
+    &__container {
+      width: 510px;
+      height: 200px;
+    }
+    &__date {
+      font-size: 14px;
+    }
+    &__img {
+      width: 35px;
+      height: 35px;
+    }
+    &__info {
+      &-name {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 801px) {
+  .comments {
+    &__container {
+      width: 690px;
+      height: 220px;
+    }
+    &__date {
+      font-size: 14px;
+    }
+    &__img {
+      width: 35px;
+      height: 35px;
+    }
+    &__info {
+      &-name {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .comments {
+    &__container {
+      width: 764px;
+      height: 300px;
+    }
+    &__content {
+      font-size: 16px;
+    }
+    &__date {
+      font-size: 18px;
+    }
+    &__img {
+      width: 50px;
+      height: 50px;
+    }
+    &__info {
+      &-name {
+        font-size: 18px;
+      }
+      &-status {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .comments {
+    &__container {
+      width: 764px;
+    }
+    &__date {
+      text-align: center;
+    }
+  }
+}
+

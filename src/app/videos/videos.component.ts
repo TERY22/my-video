@@ -47,7 +47,7 @@ export class VideosComponent implements OnInit {
   public detectBottom(): void {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       if (!this.loadedAll && !this.isLoading) {
-        this.videoService.currentPage++;
+        this.videoService.curPage++;
         this.getVideos();
       }
     }

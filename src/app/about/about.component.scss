@@ -1,0 +1,47 @@
+.about {
+  &__container {
+    margin: 330px 20px 0;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .about {
+    &__container {
+      margin: 330px 20px 0;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 801px) {
+  .about {
+    &__container {
+      margin: 330px 20px 0;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .about {
+    &__container {
+      margin: 330px 20px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about {
+    &__container {
+      margin: 320px 20px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .about {
+    &__container {
+      margin: 200px 20px 0;
+    }
+  }
+}

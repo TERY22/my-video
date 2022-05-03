@@ -5,13 +5,14 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class VideosService {
-  public paginationPage: number = 12;
-  public currentPage: number = 1;
+  public pagPage: number = 12;
+  public curPage: number = 1;
   public searchQuery: string = 'All';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-  private headers = {'Authorization': '563492ad6f917000010000016f07e56fdcad4a4f92efb8a2e909f1f3'};
+  private headers = {'Authorization': '563492ad6f917000010000016f07e56fdcad4a4f92efb8a2e909f1f3'}
 
   private get(url: string, params: any = {}): any {
     return this.http.get(url, {headers: this.headers, params: params});
@@ -19,11 +20,11 @@ export class VideosService {
 
   public getVideos(): any {
     return this.get('https://api.pexels.com/videos/search',
-    {
-      'query': this.searchQuery,
-      'per_page': this.paginationPage,
-      'page': this.currentPage,
-    });
+      {
+        'query': this.searchQuery,
+        'per_page': this.pagPage,
+        'page': this.curPage
+      });
   }
 
   public searchVideos(): any {
@@ -37,6 +38,6 @@ export class VideosService {
   }
 
   public getPopularVideos(): any {
-    return this.get('https://api.pexels.com/videos/popular', {'per_page': 10});
+    return this.get('https://api.pexels.com/videos/popular', {'per_page': 9});
   }
 }
